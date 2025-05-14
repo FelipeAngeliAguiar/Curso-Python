@@ -1,0 +1,55 @@
+Trabalhando com Módulos no Python
+---------------------------------
+
+Importação de Módulos
+----------------------
+
+- Importando tudo de um módulo:
+  import bebida  # Importa todas as bebidas
+
+- Importando apenas um item específico:
+  from bebida import café  # Importa apenas o café
+
+Biblioteca Padrão: math
+------------------------
+
+Usada para operações matemáticas.
+
+  import math
+
+Funções disponíveis:
+
+| Função         | Descrição                            |
+|----------------|---------------------------------------|
+| ceil(x)        | Arredonda para cima                  |
+| floor(x)       | Arredonda para baixo                 |
+| trunc(x)       | Remove a parte decimal               |
+| pow(x, y)      | Potência: x elevado a y              |
+| sqrt(x)        | Raiz quadrada de x                   |
+| factorial(x)   | Fatorial de x                        |
+
+Exemplo com math
+----------------
+
+  import math
+
+  num = int(input("Digite um número: "))
+  raiz = math.sqrt(num)
+  up = math.ceil(raiz)
+  down = math.floor(raiz)
+
+  print(f"Raiz: {raiz}, Arredondado para cima: {up}, para baixo: {down}")
+
+Biblioteca random
+-----------------
+
+Gera valores aleatórios.
+
+  import random
+
+  num = random.randint(1, 10)
+  print(num)
+
+Mais Bibliotecas
+----------------
+  https://www.python.org
