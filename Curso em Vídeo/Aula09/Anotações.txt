@@ -1,0 +1,66 @@
+Manipulando Cadeias de Texto
+----------------------------
+
+frase = 'Curso em Vídeo Python'
+
+Índices dos caracteres:
+C   u   r   s   o       e   m       V   i   d   e   o       P   y   t   h   o   n
+0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19  20
+
+Fatiamento
+----------
+
+print(frase[9])         # 'V'
+print(frase[9:13])      # 'Víde'
+print(frase[9:14])      # 'Vídeo'
+print(frase[9:21])      # 'Vídeo Python'
+print(frase[9:21:2])    # 'VdoPto'
+print(frase[:5])        # 'Curso'
+print(frase[15:])       # 'Python'
+print(frase[9::3])      # 'VePh'
+
+Análise
+-------
+
+print(len(frase))                    # 21
+print(frase.count('o'))              # 3
+print(frase.count('o', 0, 13))       # 1
+print(frase.find('deo'))             # 11
+print(frase.find('Android'))         # -1
+print('Curso' in frase)              # True
+
+Transformação
+-------------
+
+print(frase.replace('Python', 'Android'))   # 'Curso em Vídeo Android'
+print(frase.upper())                        # 'CURSO EM VÍDEO PYTHON'
+print(frase.lower())                        # 'curso em vídeo python'
+print(frase.capitalize())                   # 'Curso em vídeo python'
+print(frase.title())                        # 'Curso Em Vídeo Python'
+
+Divisão
+-------
+
+print(frase.split())  # ['Curso', 'em', 'Vídeo', 'Python']
+
+Exemplo visual da divisão por espaços:
+Curso em Vídeo Python
+01234 01 01234 012345
+
+Junção
+------
+
+print('-'.join(frase))  # C-u-r-s-o- -e-m- -V-í-d-e-o- -P-y-t-h-o-n
+
+Atenção: se quiser juntar os elementos da lista `split`, faça:
+palavras = frase.split()
+print('-'.join(palavras))  # Curso-em-Vídeo-Python
+
+Remoção de Espaços
+------------------
+
+frase = '   Aprenda Python  '
+
+print(frase.strip())   # 'Aprenda Python'
+print(frase.rstrip())  # '   Aprenda Python'
+print(frase.lstrip())  # 'Aprenda Python  '
