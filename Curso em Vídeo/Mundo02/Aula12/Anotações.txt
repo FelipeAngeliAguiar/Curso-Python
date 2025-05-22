@@ -1,0 +1,43 @@
+Condições Alinhadas
+
+- Condições com mais opções e possibilidades.
+- Crie mais fluxos lógicos.
+- Nunca programe apenas considerando a melhor hipótese. Programe para a melhor hipótese *e* para as outras possibilidades.
+- Use estruturas condicionais dentro de outras estruturas condicionais quando necessário.
+
+---------
+
+carro.siga()
+
+if carro.esquerda():
+    # Bloco 1
+    ...
+elif carro.direita():
+    # Bloco 2
+    ...
+elif carro.re():
+    # Bloco 3
+    ...
+else:
+    # Bloco 4
+    ...
+
+carro.pare()
+
+Exemplo com entrada de nome
+
+-----------
+
+nome = str(input('Qual é seu nome? '))
+
+if nome == 'Felipe':
+    print('Que nome lindo você tem!')
+elif nome == 'Pedro' or nome == 'Maria' or nome == 'João':
+    print('Seu nome é bem popular no Brasil.')
+elif nome in ['Ana', 'Cláudia', 'Jéssica', 'Juliana']:
+    print('Belo nome feminino.')
+else:
+    print('Seu nome é tão normal!')
+
+print(f'Bom dia, {nome}!')
+
