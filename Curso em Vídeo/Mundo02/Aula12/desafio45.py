@@ -23,16 +23,16 @@ print(f'{cores["whitebold"]}Escolha uma opção: \n1 - PEDRA \n2 - PAPEL\n3 - TE
 player = int(input('Qual vai ser a sua jogada? '))
 print(f'{cores["limpa"]}')
 
-print(f'{cores["vermelhobold"]}JO{cores["limpa"]}')
-sleep(1)
-print(f'{cores['amarelobold']}KEN{cores["limpa"]}')
-sleep(1)
-print(f'{cores["verdebold"]}PO!!!{cores["limpa"]} \n')
-sleep(1)
 if player == 1 or player == 2 or player == 3:
     alt = {1 : f'{cores["verdebold"]}{'=-'*20} \n{f'{'Player:':<10} {f'{jogadas[player]}':>10}':^40} \n{f'{'Bot:':<10} {f'{jogadas[bot]}':>10}':^40}\n{'=-'*20} \n{f'JOGADOR VENCEU':^40}{cores["limpa"]}\n',
            2 : f'{cores["vermelhobold"]}{'=-'*20} \n{f'{'Player:':<10} {f'{jogadas[player]}':>10}':^40} \n{f'{'Bot:':<10} {f'{jogadas[bot]}':>10}':^40}\n{'=-'*20} \n{f'JOGADOR PERDEU':^40}{cores["limpa"]}\n'}
-
+    print(f'{cores["vermelhobold"]}JO{cores["limpa"]}')
+    sleep(1)
+    print(f'{cores['amarelobold']}KEN{cores["limpa"]}')
+    sleep(1)
+    print(f'{cores["verdebold"]}PO!!!{cores["limpa"]} \n')
+    sleep(1)
+    
     if player == bot:
         print(f'{cores["amarelobold"]}{'=-'*20} \n{f'{'Player:':<10} {f'{jogadas[player]}':>10}':^40} \n{f'{'Bot:':<10} {f'{jogadas[bot]}':>10}':^40}\n{'=-'*20} \n{f'EMPATE':^40}{cores["limpa"]}\n')
     elif player == 1 and bot == 2:
