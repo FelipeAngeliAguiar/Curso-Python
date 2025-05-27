@@ -6,16 +6,18 @@ A TORRE DA DERROTA
 O LOBO AMA O BOLO
 ANOTARAM A DATA DA MARATONA'''
 
-txt = str(input('Digite algo: ')).strip()
+txt = str(input('Digite algo: ')).strip().upper()
 txt = txt.replace(' ', '')
-txt = txt.lower()
 newtxt = ''
+
+'''inverso = txt[::-1]'''
 
 for c in range(1, len(txt)+1):
     newtxt += txt[-c]
     
 print(f'\nTexto digitado: {txt}', 
       f'\nTexto inverso: {newtxt}')
+
 if txt == newtxt:
     print('\nÉ um Palíndromo\n')
 else:

@@ -6,15 +6,16 @@ from datetime import date
 hoje = date.today().year
 maioridade = 0
 menoridade = 0
+
 for c in range(1,8):
-    ano = int(input('Digite o ano do seu nascimento: '))
+    ano = int(input(f'Em que ano a {c}° pessoa nasceu? '))
     if ano > hoje or ano < 1900:
         print('Ano Ínvalido')
         
     else:
-        if (hoje - ano) > 18:
+        if (hoje - ano) >= 21:
             maioridade += 1
         else:
             menoridade += 1
             
-print(f'Quantas pessoas tem mais de 18 anos: {maioridade} \nQuantas pessoas tem menos de 18 anos: {menoridade}')
+print(f'\nTem {maioridade} pessoas maior de idade \nTem {menoridade} pessoas menor de idade\n')

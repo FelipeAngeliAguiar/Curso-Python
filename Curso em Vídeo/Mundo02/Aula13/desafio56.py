@@ -8,11 +8,11 @@ maisvelho = 0
 menos20 = 0
 
 for c in range(1,5):
-    print(f'\n{'=-'*20}')
-    nome = str(input('Digite seu nome: '))
-    idade = int(input('Digite sua idade: '))
+    print(f'\n{'=-'*10} {c}° PESSOA {'=-'*10}')
+    nome = str(input('Nome: '))
+    idade = int(input('Idade: '))
     print('[ 0 ] Feminino \n[ 1 ] Masculino \n')
-    sexo = int(input( 'Qual seu sexo? ' ))
+    sexo = int(input( 'Sexo: ' ))
     
     if sexo == 1 and maisvelho < idade:
         n1 = nome

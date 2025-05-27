@@ -15,4 +15,5 @@ for c in range(10, 0, -1):
     else:
         print(f'{cores["vermelho"]}{c}{cores['limpa']}')
     sleep(1)
+
 print(f'{cores["verde"]}FELIZ ANO NOVO!!!{cores["limpa"]}')
