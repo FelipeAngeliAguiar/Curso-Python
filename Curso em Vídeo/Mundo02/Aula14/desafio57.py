@@ -3,10 +3,12 @@
     
 n = 1
 while n != 0:
-    sexo = str(input('Qual o seu sexo? [M/F] ')).upper()
-    if sexo == 'M' or sexo == 'F':
+    sexo = str(input('Qual o seu sexo? [M/F] ')).strip().upper()[0]
+    if sexo == 'M':
+        print(f'Sexo Masculino registrado com sucesso')
+        n = 0
+    elif sexo == 'F':
+        print(f'Sexo Feminino registrado com sucesso')
         n = 0
     else:
         print('Resposta ìnvalida! Tente novamente')
-
-print('Acabou!')

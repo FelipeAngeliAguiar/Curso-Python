@@ -10,6 +10,6 @@ while n1 != 0:
     cont.append(str(n1))
     n1 = n1 - 1
     if n1 != 0:
-        fator = fator * n1
+        fator *= n1
     
 print(f'{cont[0]}! = {' x '.join(cont)} = {fator}')

@@ -2,11 +2,7 @@
     No final da execução, mostre a média entre todos os valores e qual foi o maior e o menor valores lidos.
     O programa deve perguntar ao usuário se ele quer ou não continuar a digitar valores.'''
     
-n1 = 0
-cont = 0
-maior = 0
-menor = 0
-soma = 0
+n1 = cont = maior = menor = soma = 0
 lista = []
 
 while n1 != 1:
@@ -35,7 +31,7 @@ while n1 != 1:
             
         elif sn == 'N':       
             media = soma / cont          
-            print(f'\n{'=-'*20} \nSobre os números digitados: \nQuantidade: {cont} \nNúmeros: {' - '.join(lista)}\nSoma: {soma} \nMédia: {media} \nMaior: {maior} \nMenor: {menor} \n{'=-'*20}')
+            print(f'\n{'=-'*20} \nSobre os números digitados: \nQuantidade: {cont} \nNúmeros: {' - '.join(lista)}\nSoma: {soma} \nMédia: {media:.2f} \nMaior: {maior} \nMenor: {menor} \n{'=-'*20}')
             
             while n3 != 1:
                 sn = str(input('\nQuer continuar digitando outros números? [S/N] ')).upper()

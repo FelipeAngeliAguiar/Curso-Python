@@ -13,4 +13,4 @@ while n1 != 0:
     a1 = total
     n1 -= 1
     
-print(' -> '.join(fi))
+print(f'\n{' -> '.join(fi)}\n')
