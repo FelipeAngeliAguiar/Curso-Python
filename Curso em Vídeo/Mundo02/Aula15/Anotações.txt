@@ -1,0 +1,32 @@
+# Interrompendo repetições com while
+
+# Estrutura básica de um loop while infinito
+while True:
+    if ground:        # Se estiver no chão, andar
+        passo
+    if space:         # Se apertar espaço, pular
+        jump
+    if coin:          # Se encontrar moeda, pegar
+        catch
+    if trophy:        # Se encontrar troféu, pular e sair do loop
+        jump
+        break
+
+# Fora do loop
+catch
+
+
+# Prática e exemplos
+
+# while True funciona como um laço que nunca acaba,
+# a não ser que usemos break ou alguma outra condição de parada.
+
+# Exemplo simples de contagem:
+contador = 0
+while True:
+    print("Contagem:", contador)
+    contador += 1
+    if contador == 10:    # Quando chegar a 10, interrompe o loop
+        break
+
+print("Fim do loop")
