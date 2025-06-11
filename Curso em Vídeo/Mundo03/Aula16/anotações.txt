@@ -1,0 +1,86 @@
+TUPLAS
+
+Variáveis:
+- Quando uma variável é declarada, ela ocupa um espaço na memória.
+- O sinal de atribuição "=" serve para atribuir um valor a uma variável.
+- Quando uma variável recebe um novo valor, o antigo é substituído (desalocado da memória, se não estiver mais referenciado).
+
+Tipos de variáveis:
+- Variável simples: armazena apenas um valor.
+- Variável composta: pode armazenar múltiplos valores em uma única estrutura.
+
+Principais tipos de variáveis compostas:
+1. Tuplas
+2. Listas
+3. Dicionários
+
+------------------------------------------
+SOBRE TUPLAS
+
+- Tuplas são variáveis compostas IMUTÁVEIS (não podem ser alteradas após a criação).
+- Usam índices para acessar seus valores (como listas e strings).
+- Strings também são compostas e funcionam com indexação semelhante.
+
+Criação de uma tupla:
+lanche = ('Hambúrguer', 'Suco', 'Pizza', 'Pudim')
+
+Atenção:
+- Parênteses são opcionais na criação: lanche = 'Hambúrguer', 'Suco'
+  Mas o uso de parênteses é recomendado por clareza.
+- Tuplas podem conter dados de diferentes tipos (int, float, str, etc).
+
+------------------------------------------
+ACESSANDO ELEMENTOS (Aula 09 - Fatiamento)
+
+print(lanche[1])      # Suco
+print(lanche[-1])     # Pudim (último elemento)
+print(lanche[1:3])    # ('Suco', 'Pizza')
+
+------------------------------------------
+LAÇOS COM TUPLAS
+
+Usando índice com range():
+for cont in range(0, len(lanche)):
+    print(f'Eu vou comer {lanche[cont]}')
+
+Usando acesso direto aos elementos:
+for comida in lanche:
+    print(f'Eu vou comer {comida}')
+
+Usando enumerate() para acessar posição e valor:
+for pos, comida in enumerate(lanche):
+    print(f'Eu vou comer {comida} na posição {pos}')
+
+Resultado final:
+print('Comi pra caramba!')
+
+------------------------------------------
+FUNÇÕES E OPERAÇÕES COM TUPLAS
+
+print(sorted(lanche))  
+# Retorna uma lista com os elementos da tupla ordenados (sem modificar a tupla original)
+
+Concatenação de tuplas:
+a = (2, 5, 4)
+b = (5, 8, 1, 2)
+c = a + b
+print(c)              # (2, 5, 4, 5, 8, 1, 2)
+
+Outras funções úteis:
+print(len(c))         # 7 -> quantidade de elementos
+print(c.count(5))     # 2 -> quantas vezes o valor 5 aparece
+print(c.index(8))     # 4 -> posição do primeiro valor 8
+
+Tuplas podem conter dados variados:
+pessoa = ('Gustavo', 39, 'M', 99.88)
+
+Remoção de tupla inteira:
+del(pessoa)
+# Remove a variável 'pessoa' da memória. Não é possível apagar apenas um item da tupla.
+
+------------------------------------------
+OBSERVAÇÕES FINAIS
+
+- Tuplas são mais rápidas e consomem menos memória que listas.
+- Ideais para dados que não devem ser alterados durante a execução do programa.
+- Embora imutáveis, é possível criar uma nova tupla combinando ou fatiando outras.
