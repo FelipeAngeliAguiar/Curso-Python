@@ -5,15 +5,8 @@ dicionario = ('aprender', 'programar', 'linguagem', 'python',
             'curso', 'gratis', 'estudar', 'praticar',
             'trabalhar', 'mercado', 'programador', 'futuro')
 
-vogal = 'a', 'e', 'i', 'o', 'u'
-
-for contD in range (len(dicionario)):
-    vogais = ''
-    palavra = (dicionario[contD])
-    for contP in range (len(palavra)):
-        for contV in range (len(vogal)):
-            if palavra[contP] == vogal[contV]:
-                vogais += vogal[contV]
-    
-    print(f'Na palavra {palavra.upper()} temos {' '.join(vogais)}')
-        
+for p in dicionario:
+    print(f'\nNa palavra {p.upper()} temos', end=' ')
+    for letra in p:
+        if letra.lower() in 'aeiou':
+            print(letra, end=' ')

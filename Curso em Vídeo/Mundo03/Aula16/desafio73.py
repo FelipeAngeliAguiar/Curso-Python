@@ -4,7 +4,10 @@
     C) Uma lista com os times em ordem alfabética.
     D) Em que posição na tabela está o time da Chapecoense (nn tem ent vai o Grêmio).'''
     
-times = ('Flamengo', 'Cruzeiro', 'Bragantino', 'Palmeiras', 'Fluminense', 'Botafogo', 'Bahia', 'Mirassol', 'Atlético-MG', 'Ceará SC', 'Corinthians', 'Grêmio', 'São Paulo', 'Internacional', 'Vasco da Gama', 'EC Vitória', 'Fortaleza', 'Santos', 'Juventude', 'Sport Recife')
+times = ('Flamengo', 'Cruzeiro', 'Bragantino', 'Palmeiras', 'Fluminense', 
+         'Botafogo', 'Bahia', 'Mirassol', 'Atlético-MG', 'Ceará SC', 
+         'Corinthians', 'Grêmio', 'São Paulo', 'Internacional', 'Vasco da Gama', 
+         'EC Vitória', 'Fortaleza', 'Santos', 'Juventude', 'Sport Recife')
 
 print(f'Estatisticas:')
 print(f'Lista de times do Brasileirão: \n{', '.join(times)}\n{'=-'*20}')
