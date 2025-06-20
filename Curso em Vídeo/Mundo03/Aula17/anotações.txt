@@ -1,0 +1,110 @@
+LISTAS
+
+- Listas são variáveis compostas MUTÁVEIS (podem ser alteradas após a criação).
+- Usam colchetes: []
+- Permitem adicionar, remover, ordenar e modificar elementos.
+- Cada elemento possui um índice (começando do 0).
+
+----------------------------------------------------
+CRIAÇÃO E ACESSO
+
+lista = [2, 5, 9, 1]
+print(lista[0])       # Acessa o primeiro elemento
+print(lista[-1])      # Acessa o último elemento
+
+----------------------------------------------------
+MODIFICAÇÃO DE ELEMENTOS
+
+lista[2] = 10         # Substitui o valor no índice 2 por 10
+
+----------------------------------------------------
+ADICIONAR ELEMENTOS
+
+lista.append('x')     # Adiciona 'x' ao final da lista
+
+lista.insert(0, 'y')  # Insere 'y' na posição 0 (empurra os demais para frente)
+
+----------------------------------------------------
+REMOVER ELEMENTOS
+
+del lista[3]          # Remove o elemento no índice 3
+
+lista.pop(3)          # Remove e retorna o elemento no índice 3
+
+lista.pop()           # Remove o último elemento
+
+lista.remove('x')     # Remove a primeira ocorrência do valor 'x'
+
+Remoção segura:
+if 'x' in lista:
+    lista.remove('x') # Evita erro se 'x' não existir
+
+----------------------------------------------------
+GERANDO LISTAS AUTOMÁTICAS
+
+valores = list(range(4, 11))  # Cria lista de 4 até 10
+# Resultado: [4, 5, 6, 7, 8, 9, 10]
+
+----------------------------------------------------
+ORDENAÇÃO
+
+valores.sort()              # Ordena os valores em ordem crescente
+
+valores.sort(reverse=True)  # Ordena os valores em ordem decrescente
+
+----------------------------------------------------
+OUTRAS FUNÇÕES ÚTEIS
+
+len(lista)       # Retorna o tamanho da lista (quantos elementos)
+
+----------------------------------------------------
+PRÁTICA
+
+num = [2, 5, 9, 1]
+num[2] = 3                 # Substitui valor na posição 2
+num.append(7)             # Adiciona 7 ao final
+num.sort()                # Ordena crescente
+num.sort(reverse=True)    # Ordena decrescente
+num.insert(2, 0)          # Insere 0 na posição 2
+num.pop(2)                # Remove valor da posição 2
+num.remove(2)             # Remove o primeiro valor 2 encontrado
+
+if 4 in num:
+    num.remove(4)
+else:
+    print('Não tem número 4')
+
+print(len(num))           # Tamanho da lista
+
+----------------------------------------------------
+LAÇOS COM LISTAS
+
+valores = []
+valores.append(5)
+valores.append(9)
+valores.append(4)
+
+for v in valores:
+    # Para cada valor em 'valores'
+    print(f'{v}...', end='')
+
+for c, v in enumerate(valores):
+    # Mostra posição (c) e valor (v)
+    print(f'Na posição {c} encontrei o valor {v}')
+
+for cont in range(0, 5):
+    valores.append(int(input('Digite um valor: ')))
+    # Adiciona valores digitados pelo usuário
+
+----------------------------------------------------
+CÓPIA DE LISTAS
+
+Ligação entre listas (cópia por referência):
+a = [2, 3, 4, 7]
+b = a
+# Alterar 'b' também altera 'a', pois ambas apontam para a mesma lista
+
+Cópia real (independente):
+a = [2, 3, 4, 7]
+b = a[:]
+# Agora, alterações em 'b' não afetam 'a'
