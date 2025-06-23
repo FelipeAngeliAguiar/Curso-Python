@@ -1,4 +1,4 @@
-LISTAS
+LISTAS (1)
 
 - Listas são variáveis compostas MUTÁVEIS (podem ser alteradas após a criação).
 - Usam colchetes: []
