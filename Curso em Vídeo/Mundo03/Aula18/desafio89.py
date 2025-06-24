@@ -1,5 +1,6 @@
 '''Crie um programa que leia nome e duas notas de vários alunos e guarde tudo em uma lista composta.
     No final, mostre um boletim contendo a média de cada um e permita que o usuário possa mostrar as notas de cada aluno individualmente.'''
+from time import sleep
 
 boletim = []
 
@@ -13,7 +14,7 @@ while True:
             print('Nota Ínvalida! ')
         else:
             break
-    
+        
     while True:
         nota2 = float(input('Nota 2: '))
         
@@ -39,13 +40,16 @@ print(f'{'No':<3}{'NOME':<20} Média')
 print(f'-'*36)
 
 for c , v in enumerate(boletim):
-        print(f'{c:<3}{boletim[c][0]:<20} {(boletim[c][1][0]+boletim[c][1][1])/2:.2f}')
+        print(f'{c:<3}{boletim[c][0]:<20} {(boletim[c][1][0]+boletim[c][1][1])/2:.1f}')
 
 print(f'-'*36)
 
 while True:
     num = int(input('Mostrar nota de qual aluno? (999 interrompe): '))
     if num == 999:
+        print('FINALIZANDO...')
+        sleep(2)
+        print('< VOLTE SEMPRE! >')
         break
     elif num < 0 or num >= len(boletim):
         print('Número Ínvalido!')

@@ -15,6 +15,3 @@ for c in range (1, 8):
 print('=-'*20)
 print(f'Os valores pares digitado foram: {sorted(numero[0])}')
 print(f'Os valores ímpares digitados foram: {sorted(numero[1])}')
-    
-
-    
