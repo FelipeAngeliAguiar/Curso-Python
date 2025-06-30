@@ -43,15 +43,18 @@ print(f'- O grupo tem {len(grupo)} {'pesssoas' if len(grupo) > 1 else 'pessoa'}.
 print(f'- A média de idade do grupo é de {total/len(grupo):.2f} anos.')
 print(f'- As mulheres cadastradas foram: ', end='')
 
-for m in range(0, len(grupo)):
-    if grupo[m]['sexo'] == 'F':
-        print(grupo[m]['nome'], end=' ')
+for m in grupo:
+    if m['sexo'] == 'F':
+        print(m['nome'], end=' ')
         
 print()
 print(f'- Lista das pessoas que estão acima da média: ')
 
-for i in range(0, len(grupo)):
-    if grupo[i]['idade'] > total/len(grupo):
-        print(f'\nNome = {grupo[i]['nome']}; sexo = {grupo[i]['sexo']}; idade: {grupo[i]['idade']};')
-
+for i in grupo:
+    if i["idade"] >= total/len(grupo):
+        print('   ')
+        for k, v in i.items():
+            print(f'{k} = {v}; ', end='')
+            
+print(' ')
 print('<< ENCERRADO >>')

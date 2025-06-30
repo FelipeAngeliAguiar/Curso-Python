@@ -4,11 +4,9 @@
 time = list()
 gols = list()
 
-
 while True:
     print('\n')
     jogador = {'nome': str(input('Nome do Jogador: '))}
-    total = 0
     
     while True:
         partidas = int(input(f'Quantas partidas {jogador["nome"]} jogou? '))
@@ -25,15 +23,14 @@ while True:
             
             if gol >= 0:
                 gols.append(gol)
-                total += gol
                 break
             else:
                 print('Valor Ínvalido! ')
                 
     jogador['gols'] = gols[:]
-    jogador['total'] = total
+    jogador['total'] = sum(gols)
     gols.clear()
-    time.append(jogador)
+    time.append(jogador.copy())
              
     while True:
         sn = str(input('Quer continuar? [S/N] ')).strip().lower()
@@ -52,7 +49,7 @@ for c in range(0, len(time)):
 print('-'*45)
 
 while True:
-    dados = int(input('Mostrar dados de qual jogador? '))
+    dados = int(input('Mostrar dados de qual jogador? (999 para parar)'))
     
     if dados == 999:
         print('<< VOLTE SEMPRE >>')
@@ -61,7 +58,7 @@ while True:
     if 0 <= dados < len(time):
         print(f'-- LEVANTAMENTO DO JOGADOR {time[dados]["nome"].upper()}')
         for cont in range(0, len(time[dados]["gols"])):
-            print(f'{f'No jogo {cont+1} ele fez {time[dados]["gols"][cont]} {"gol" if time[dados]["gols"][cont] == 1 else "gols"}.':>28}')
+            print(f'{f'   No jogo {cont+1} ele fez {time[dados]["gols"][cont]} {"gol" if time[dados]["gols"][cont] == 1 else "gols"}.'}')
         print("-"*45)
     else:
         print(f'ERRO! Não existe jogador com código {dados}! Tente novamente \n{"-"*45}')

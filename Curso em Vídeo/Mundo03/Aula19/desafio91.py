@@ -4,6 +4,7 @@
     
 from random import randint
 from time import sleep
+from operator import itemgetter
 
 cont = 1
 
@@ -12,19 +13,14 @@ jogos = {'Jogador1': randint(1,6),
          'Jogador3': randint(1,6),
          'Jogador4': randint(1,6)}
 
-ranking = list()
-
 print("Valores Sorteados: ")
 for k, v in jogos.items():
-    print(f"{f'O {k} tirou {v}':>20}")
+    print(f"{f'O {k} tirou {v} no dado.':>30}")
     sleep(0.8)
     
 print()
 print("Ranking dos jogadores: ")
-
-for k, v in sorted(jogos.items(), key=lambda item: item[1], reverse=True):
+for k, v in sorted(jogos.items(), key=itemgetter(1), reverse=True):
     print(f"{f'{cont}° lugar: {k} com {v}':>26}")
     cont += 1
     sleep(0.8)
-
-

@@ -7,16 +7,14 @@ from datetime import datetime
 cadastro = {'nome': str(input('Nome: ')),
             'idade': (datetime.now().year - int(input('Ano de Nascimento: ')))}
 
-ctps = int(input('Carteira de Trabalho (0 não tem): '))
+cadastro['ctps'] = int(input('Carteira de Trabalho (0 não tem): '))
 
-if ctps == 0:
-    cadastro['ctps'] = 0
-else:
+if cadastro['ctps'] != 0:
     cadastro['contratacao'] = int(input("Ano de contratação: "))
     cadastro['salario'] = float(input('Salário: R$'))
     cadastro['aposentadoria'] = (cadastro['contratacao'] + 35) - datetime.now().year + cadastro['idade']
 
 print('-='*20)
 for k, v in cadastro.items():
-    print(f'{k} tem valor {v}')
+    print(f'  - {k} tem valor {v}')
     

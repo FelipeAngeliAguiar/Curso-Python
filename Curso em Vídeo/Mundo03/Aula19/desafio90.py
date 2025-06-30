@@ -12,5 +12,12 @@ while True:
     else:
         break
 
-print(f'\n{'=-'*16} \n{f"BOLETIM DE {boletim["nome"].upper()}":^32} \n{'=-'*16} \nMédia: {boletim["media"]:>24} \nResultado: {"APROVADO" if boletim["media"] > 7 else "REPROVADO":>20}\n')
+if boletim['media'] >= 7:
+    boletim['resultado'] = 'Aprovado'
+elif boletim['media'] <= 5:
+    boletim['resultado'] = 'Reprovado'
+else:
+    boletim['resultado'] = 'Recuperação'
+    
+print(f'\n{'=-'*16} \n{f"BOLETIM DE {boletim["nome"].upper()}":^32} \n{'=-'*16} \nMédia: {boletim["media"]:>24} \nResultado: {boletim["resultado"]:>20}\n')
 

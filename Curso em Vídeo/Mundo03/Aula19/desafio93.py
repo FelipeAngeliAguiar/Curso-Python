@@ -14,22 +14,22 @@ while True:
         break
 
 gols = list()
-total = 0
 
 for c in range(1, partidas+1):
     while True:
-        gol = int(input(f'Quantos gols na partida {c}? '))
+        gol = int(input(f'  Quantos gols na partida {c}? '))
         
         if gol < 0:
             print('Valor Ínvalido! ')
         else:
             break
     gols.append(gol)
-    total += gol
 
-jogador['gols'] = gols
-jogador['total'] = total
+jogador['gols'] = gols[:]
+jogador['total'] = sum(gols)
 
+print(f'\n{'=-'*15}\n')
+print(jogador)
 print(f'\n{'=-'*15}')
 for k, v in jogador.items():
     print(f'O campo {k} tem o valor {v}.')
@@ -40,4 +40,4 @@ print(f'{'=-'*20}')
 for cont in range(0, partidas):
     print(f'{f' => Na partida {cont+1}, fez {jogador["gols"][cont]}':>30}')
 
-print(f'Fez um total de {total} gols')
+print(f'Fez um total de {jogador["total"]} gols')
