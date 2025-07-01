@@ -1,0 +1,100 @@
+FUNÇÕES (PARTE 1)
+
+O QUE É UMA FUNÇÃO?
+
+- Uma função é uma rotina: um bloco de código que pode ser reutilizado sempre que necessário.
+- Permite organizar, reaproveitar e tornar o código mais limpo e modular.
+
+Exemplos de funções internas (embutidas) em Python:
+- print()
+- len()
+- input()
+- int()
+- float()
+
+----------------------------------------------------
+CRIANDO UMA FUNÇÃO SIMPLES
+
+def mostrarLinha():
+    print('--------------------')
+
+mostrarLinha()
+print('     SISTEMA DE ALUNOS    ')
+mostrarLinha()
+
+Saída:
+--------------------
+     SISTEMA DE ALUNOS    
+--------------------
+
+----------------------------------------------------
+FUNÇÃO COM PARÂMETRO
+
+def mensagem(txt):
+    print('-' * 30)
+    print(f'{txt:^30}')   # ^ centraliza o texto
+    print('-' * 30)
+
+mensagem('SISTEMA DE ALUNOS')
+
+Saída:
+------------------------------
+      SISTEMA DE ALUNOS       
+------------------------------
+
+----------------------------------------------------
+FUNÇÃO COM DOIS PARÂMETROS
+
+def soma(a, b):
+    s = a + b
+    print(s)
+
+soma(15, 5)
+
+Saída:
+20
+
+----------------------------------------------------
+USANDO *args (PARÂMETROS VARIÁVEIS)
+
+Com o asterisco `*`, a função aceita vários argumentos sem limite fixo.
+
+def contador(*num):
+    for v in num:
+        print(f'{v}', end=' ')
+    print()  # quebra de linha
+
+contador(5, 4, 3, 2, 1)
+
+Saída:
+5 4 3 2 1
+
+----------------------------------------------------
+FUNÇÃO QUE MODIFICA UMA LISTA
+
+def dobra(lista):
+    pos = 0
+    while pos < len(lista):
+        lista[pos] *= 2
+        pos += 1
+
+valores = [7, 2, 5, 0, 4]
+dobra(valores)
+print(valores)
+
+Saída:
+[14, 4, 10, 0, 8]
+
+----------------------------------------------------
+FUNÇÃO COM SOMA DE VÁRIOS VALORES
+
+def soma(*valores):
+    s = 0
+    for num in valores:
+        s += num
+    print(f'Somando os valores {valores} temos {s}')
+
+soma(2, 9, 4)
+
+Saída:
+Somando os valores (2, 9, 4) temos 15
