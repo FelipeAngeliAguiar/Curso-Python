@@ -6,12 +6,12 @@ from random import randint
 
 numeros = list()
 
-def sorteio(num):
-    print(f'Sorteando {num} valores da lista: ', end='')
+def sorteio(vezes, lista):
+    print(f'Sorteando {vezes} valores da lista: ', end='')
     
-    for c in range(0, num):
+    for c in range(0, vezes):
         sorteado = randint(1, 10)
-        numeros.append(sorteado)
+        lista.append(sorteado)
         print(f'{sorteado}', end=' ', flush=True)
         sleep(0.3)
     
@@ -30,6 +30,6 @@ def somaPar(lista):
     print(soma)
         
 print()
-sorteio(5)
+sorteio(5, numeros)
 somaPar(numeros)
 print()
