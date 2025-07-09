@@ -20,11 +20,11 @@ def ficha(nome='', gols=0):
 
 
 
-jogador = str((input('Nome do Jogador: '))).strip()
+jogador = input('Nome do Jogador: ')
 num = input('Números de Gols: ')
 
 if num.isnumeric():
-    num.int(num)
+    num = int(num)
 else:
     num = 0
 

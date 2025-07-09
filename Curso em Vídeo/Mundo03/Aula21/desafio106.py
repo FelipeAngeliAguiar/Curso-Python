@@ -11,6 +11,22 @@ cores = {'limpo': '\033[m',
          'azul': '\033[1;34m',
          'ciano': '\033[1;36m'}
 
+def ajuda(cmnd='', cor='limpo'):
+    """
+    -> Função para exibir o help formatado.
+    :param cmnd: Comando inserido na função help().
+    :param cor: Cor para o texto.
+    :return: Exibe o help formatado no terminal.
+    """
+    ajustarTxt(f"Acessando o manual do comando '{cmnd}'", 'azul')
+    
+    sleep(1.5)
+    print(formatar(cor))
+    help(cmnd)
+    print(formatar('limpo'))
+    sleep(2)
+    
+    
 def formatar(cor='limpo'):
     """
     -> Função para aplicar cor ao texto no terminal.
@@ -19,6 +35,7 @@ def formatar(cor='limpo'):
     """
     
     print(cores[cor])
+
 
 def ajustarTxt(txt, cor='limpo'):
     """
@@ -49,12 +66,4 @@ while True:
         sleep(1.5)
         break
     else:
-        ajustarTxt(f"Acessando o manual do comando '{texto}'", 'azul')
-        sleep(1.5)
-        
-        formatar('branco')
-        help(texto)
-        formatar('limpo')
-        
-        sleep(1.5)
-    
+        ajuda(texto, 'branco') 

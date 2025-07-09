@@ -21,16 +21,19 @@ def notas(*nt, situacao=False):
     boletim['menor'] = min(nt)
     boletim['media'] = round((sum(nt)/len(nt)), 2)
     
-    if situacao:
+    if situacao: 
         if boletim['media'] >= 7:
             boletim['situação'] = 'BOA'
-        elif boletim['media'] >= 6:
+        elif boletim['media'] >= 5:
             boletim['situação'] = 'RAZOÁVEL'
         else:
             boletim['situação'] = 'RUIM'
         
     return boletim
     
-
-resp = notas(3.5, 2, 6.5)
+print()
+resp = notas(5.5, 9.5, 10, 6.5, situacao=True)
+print()
+print(resp)
 help(notas)
+print()

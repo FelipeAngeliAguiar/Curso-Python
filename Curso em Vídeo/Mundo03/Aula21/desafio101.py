@@ -12,19 +12,18 @@ def voto(ano):
     
     idade = datetime.now().year - ano
     
-    
-    if idade >= 65:
+    if idade < 16:
+        return idade, 'NÃO VOTA'
+    elif 16 <= idade < 18 or idade > 65:
         return idade, 'VOTO OPCIONAL'
-    elif idade >= 18:
-        return idade, 'VOTO OBRIGATÓRIO'
     else:
-        return idade, 'VOTO NEGADO'
+        return idade, 'VOTO OBRIGATÓRIO'
     
 
 while True:
-    nasc = (int(input('Digite o ano de nascimento: ')))
+    nasc = int(input('Digite o ano de nascimento: '))
     
-    if nasc <= datetime.now().year:
+    if nasc <= datetime.now().year and datetime.now().year - nasc < 200:
         break
     else:
         print('Ano Ínvalido, tente novamente! ')
