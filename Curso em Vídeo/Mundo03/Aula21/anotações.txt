@@ -1,0 +1,143 @@
+FUNÇÕES (PARTE 2)
+
+Tópicos:
+- Interactive Help (Ajuda Interativa)
+- Docstrings
+- Parâmetros Opcionais
+- Escopo de Variáveis
+- Retorno de Resultados
+
+----------------------------------------------------
+INTERACTIVE HELP
+
+Função: help()
+
+- Mostra a documentação (manual) de funções, métodos e objetos.
+- Exemplo:
+    help(print)
+    help(input)
+
+----------------------------------------------------
+DOCSTRINGS
+
+- Docstring é a documentação de uma função definida pelo próprio programador.
+- Serve como um manual interativo, acessível com help() ou dentro de IDEs.
+
+Exemplo:
+
+def contador(i, f, p):
+    """
+    -> Faz uma contagem e mostra na tela.
+    :param i: início da contagem
+    :param f: fim da contagem
+    :param p: passo da contagem
+    :return: sem retorno
+    Função criada por Felipe Angeli com ajuda do Curso em Vídeo
+    """
+    c = i
+    while c <= f:
+        print(f'{c}', end='..')
+        c += p
+    print('FIM!')
+
+contador(2, 10, 2)
+
+----------------------------------------------------
+PARÂMETROS OPCIONAIS
+
+- Podemos definir valores padrão nos parâmetros para evitar erros se eles forem omitidos.
+
+Exemplo:
+
+def somar(a=0, b=0, c=0):
+    s = a + b + c
+    print(f'A soma vale {s}')
+
+somar(3, 2, 5)   # 10
+somar(8, 4)      # 12
+somar()          # 0
+
+----------------------------------------------------
+ESCOPO DE VARIÁVEIS
+
+- **Escopo local**: variável criada dentro da função, só existe ali.
+- **Escopo global**: variável criada fora da função, acessível em todo o programa.
+
+Exemplo:
+
+def teste(b):
+    a = 8         # escopo local
+    b += 4
+    c = 2
+    print(f'A (dentro) vale {a}')
+    print(f'B (dentro) vale {b}')
+    print(f'C (dentro) vale {c}')
+
+a = 5
+teste(a)
+print(f'A (fora) vale {a}')  # 5
+# b e c não existem fora da função
+
+Usando `global` para modificar uma variável global dentro da função:
+
+def teste(b):
+    global a      # acessa a variável 'a' do escopo global
+    a = 8
+    b += 4
+    c = 2
+    print(f'A (dentro) vale {a}')
+    print(f'B (dentro) vale {b}')
+    print(f'C (dentro) vale {c}')
+
+a = 5
+teste(a)
+print(f'A (fora) vale {a}')  # 8
+# b e c ainda não existem fora da função
+
+----------------------------------------------------
+RETORNO DE RESULTADOS
+
+Usando `return` para enviar valores de volta à chamada da função.
+
+def somar(a=0, b=0, c=0):
+    s = a + b + c
+    return s
+
+r1 = somar(3, 2, 5)
+r2 = somar(1, 7)
+r3 = somar(4)
+
+print(f'Meus cálculos deram {r1}, {r2}, {r3}.')
+
+# Também pode ser usado direto:
+print(somar(3, 2, 5))
+
+----------------------------------------------------
+PRÁTICA — FATORIAL
+
+def fatorial(num=1):
+    f = 1
+    for c in range(num, 0, -1):
+        f *= c
+    return f
+
+f1 = fatorial(5)   # 120
+f2 = fatorial(4)   # 24
+f3 = fatorial()    # 1
+
+print(f'Os resultados são {f1}, {f2}, {f3}')
+
+----------------------------------------------------
+RETORNO BOOLEANO (VERDADEIRO/FALSO)
+
+def parOuImpar(n=0):
+    if n % 2 == 0:
+        return True
+    else:
+        return False
+
+num = 7
+if parOuImpar(num):
+    print('É par')
+else:
+    print('É ímpar')
